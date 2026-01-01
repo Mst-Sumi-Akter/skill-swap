@@ -45,19 +45,25 @@ export interface ButtonProps
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ({ className, variant, size, asChild = false, ...props }, ref) => {
-        // Basic support for asChild (Slot) if installed, otherwise just button
-        // Since I didn't install @radix-ui/react-slot, I should remove it or handle it.
-        // I will implement a basic version without Slot for now to avoid extra installs unless necessary,
-        // but typically shadcn uses Slot. I'll stick to simple button for now to keep deps low unless user requested shadcn.
-        // User requested "Core Libraries: Tailwind CSS, Framer Motion, Lucide React".
-        // So I will remove Slot reference and just use button. 
+        const Comp = asChild ? Slot : "button";
+
+        // If asChild, don't apply motion animation as it may conflict with child component
+        if (asChild) {
+            return (
+                <Comp
+                    className={cn(buttonVariants({ variant, size, className }))}
+                    ref={ref}
+                    {...props}
+                />
+            );
+        }
 
         return (
             <motion.button
                 whileTap={{ scale: 0.95 }}
                 className={cn(buttonVariants({ variant, size, className }))}
                 ref={ref}
-                {...(props as any)}
+                {...props as any}
             />
         );
     }

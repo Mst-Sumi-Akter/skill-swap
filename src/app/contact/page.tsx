@@ -81,11 +81,11 @@ export default function ContactPage() {
 
                                     <form onSubmit={handleSubmit} className="space-y-6">
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                            <Input label="Full Name" placeholder="John Doe" required />
-                                            <Input label="Email Address" type="email" placeholder="john@example.com" required />
+                                            <Input label="Full Name" required />
+                                            <Input label="Email Address" type="email" required />
                                         </div>
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                            <Input label="Subject" placeholder="General Inquiry" required />
+                                            <Input label="Subject" required />
                                             <div className="relative">
                                                 <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2 block">
                                                     Department
