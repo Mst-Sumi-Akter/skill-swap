@@ -12,7 +12,7 @@ async function getRecentCourses() {
   // Using absolute URL for now, assuming default nextjs port. 
   // Ideally use an internal service call if possible, but for Wiring, standard fetch is expected.
   try {
-    const res = await fetch('http://localhost:3000/api/courses', { cache: 'no-store' }); // Disable cache for dev
+    const res = await fetch('http://localhost:3001/api/courses', { cache: 'no-store' }); // Disable cache for dev
     if (!res.ok) return [];
     return res.json();
   } catch (error) {
