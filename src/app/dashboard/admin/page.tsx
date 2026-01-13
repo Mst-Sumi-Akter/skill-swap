@@ -47,17 +47,7 @@ function AdminDashboardContent() {
         }
     }, [searchParams]);
 
-    // Separate debug log
-    useEffect(() => {
-        if (sessionStatus === "authenticated") {
-            console.log("Admin Dashboard Session:", {
-                id: session?.user?.id,
-                // @ts-expect-error role is generic
-                role: session?.user?.role,
-                isAdmin
-            });
-        }
-    }, [session, sessionStatus, isAdmin]);
+
 
     const handleTabChange = (tab: Tab) => {
         setActiveTab(tab);

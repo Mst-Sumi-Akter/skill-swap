@@ -5,6 +5,8 @@ import { Course } from "@/models/Course";
 import { Exchange } from "@/models/Exchange";
 import mongoose from "mongoose";
 
+export const dynamic = "force-dynamic";
+
 export async function GET() {
     try {
         const session = await auth();

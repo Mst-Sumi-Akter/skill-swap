@@ -66,7 +66,7 @@ export default function CourseDetails() {
             if (!res.ok) {
                 const errorMsg = data.message || data.error || "Failed to send exchange request";
                 toast.error(errorMsg);
-                if (data.details) console.log("Exchange Error Details:", data.details);
+                if (data.details) console.error("Exchange Error Details:", data.details);
             } else {
                 toast.success("Exchange request sent successfully!");
                 setIsExchangeModalOpen(false);

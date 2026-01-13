@@ -3,6 +3,8 @@ import { dbConnect } from "@/lib/db";
 import { User } from "@/models/User";
 import { auth } from "@/auth";
 
+export const dynamic = "force-dynamic";
+
 // GET all users for admin
 export async function GET(req: Request) {
     const session = await auth();

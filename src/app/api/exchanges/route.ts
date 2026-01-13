@@ -6,6 +6,8 @@ import { User } from "@/models/User";
 import { auth } from "@/auth";
 import mongoose from "mongoose";
 
+export const dynamic = "force-dynamic";
+
 export async function POST(req: Request) {
     const session = await auth();
     if (!session || !session.user) {
@@ -18,7 +20,7 @@ export async function POST(req: Request) {
         const body = await req.json();
         const { requestedCourseId, offeredCourseId } = body;
 
-        console.log("Creating exchange process started:", { fromUserId, requestedCourseId, offeredCourseId });
+
 
         if (!requestedCourseId || !offeredCourseId) {
             return NextResponse.json({ error: "Both course IDs are required" }, { status: 400 });
@@ -66,7 +68,7 @@ export async function POST(req: Request) {
             status: "pending",
         });
 
-        console.log("Exchange created successfully ID:", newExchange._id);
+
         return NextResponse.json(newExchange, { status: 201 });
     } catch (error: any) {
         console.error("CRITICAL: Create exchange error:", error);
