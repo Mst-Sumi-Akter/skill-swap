@@ -2,6 +2,8 @@
 
 Skill Swap is a premium, AI-powered marketplace designed to facilitate skill trading without monetary transactions. It allows users to transform their knowledge into a currency, enabling a peer-to-peer exchange of courses and expertise.
 
+Live link: https://skill-swap-zagh-git-main-sumi-akters-projects.vercel.app/
+
 ## ✨ Key Features
 
 ### 👤 User Features
@@ -32,54 +34,6 @@ Skill Swap is a premium, AI-powered marketplace designed to facilitate skill tra
 - **Database**: [MongoDB](https://www.mongodb.com/) with [Mongoose](https://mongoosejs.com/)
 - **Authentication**: [NextAuth.js v5 (Beta)](https://next-auth.js.org/)
 - **Components**: Custom-built premium components with a focus on rich aesthetics.
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js 18+
-- MongoDB Database (Atlas or Local)
-
-### Installation
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/Mst-Sumi-Akter/skill-swap.git
-   cd skill-swap
-   ```
-
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-
-3. **Set up Environment Variables**:
-   Create a `.env` file in the root directory and add the following:
-   ```env
-   MONGODB_URI=your_mongodb_connection_string
-   AUTH_SECRET=your_next_auth_secret
-   NEXTAUTH_URL=http://localhost:3000
-   ```
-
-4. **Run the development server**:
-   ```bash
-   npm run dev
-   ```
-
-5. **Open the app**:
-   Navigate to [http://localhost:3000](http://localhost:3000) to see the result.
-
----
-
-## 📦 Deployment
-
-This project is optimized for deployment on the **Vercel Platform**.
-
-1. Push your code to GitHub.
-2. Connect your repository to Vercel.
-3. Configure the `MONGODB_URI` and `AUTH_SECRET` in the Vercel Environment Variables settings.
-4. Deploy!
 
 ---
 
