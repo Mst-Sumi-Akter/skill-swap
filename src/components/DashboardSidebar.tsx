@@ -21,7 +21,7 @@ export function DashboardSidebar({ isOpen, onClose }: SidebarProps) {
 
     const sidebarLinks = [
         ...(isAdmin ? [
-            { name: "Overview", href: "/dashboard", icon: LayoutDashboard },
+            { name: "Overview", href: "/dashboard/admin", icon: LayoutDashboard },
             { name: "Approved Course", href: "/dashboard/admin?tab=approved-course", icon: BookOpen },
             { name: "Add Course Request", href: "/dashboard/admin?tab=add-course-request", icon: PlusCircle },
             { name: "Users", href: "/dashboard/admin?tab=users", icon: Users },

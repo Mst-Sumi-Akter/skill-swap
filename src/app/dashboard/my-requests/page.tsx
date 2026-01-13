@@ -125,8 +125,8 @@ export default function ExchangeRequests() {
                                                         {req.createdAt ? formatDistanceToNow(new Date(req.createdAt), { addSuffix: true }) : 'unknown time'}
                                                     </div>
                                                     <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${req.status === 'pending' ? 'bg-amber-100 text-amber-600' :
-                                                            req.status === 'accepted' ? 'bg-emerald-100 text-emerald-600' :
-                                                                'bg-red-100 text-red-600'
+                                                        req.status === 'accepted' ? 'bg-emerald-100 text-emerald-600' :
+                                                            'bg-red-100 text-red-600'
                                                         }`}>
                                                         {req.status}
                                                     </span>
@@ -202,8 +202,8 @@ export default function ExchangeRequests() {
                                                 <div className="border-t md:border-t-0 md:border-l border-slate-100 dark:border-zinc-800 p-6 flex flex-col items-center justify-center min-w-[120px] bg-slate-50/20 dark:bg-zinc-800/10">
                                                     <div className="text-[10px] font-bold text-slate-400 uppercase mb-1">{isIncoming ? 'Received' : 'Sent'}</div>
                                                     <div className={`text-sm font-bold ${req.status === 'accepted' ? 'text-emerald-500' :
-                                                            req.status === 'rejected' ? 'text-red-500' :
-                                                                'text-amber-500'
+                                                        req.status === 'rejected' ? 'text-red-500' :
+                                                            'text-amber-500'
                                                         }`}>
                                                         {req.status === 'pending' ? 'Pending Partner' : req.status.charAt(0).toUpperCase() + req.status.slice(1)}
                                                     </div>

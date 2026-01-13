@@ -7,14 +7,19 @@ import { ArrowRight, Search, Users, Zap, ShieldCheck, Lock as LockIcon, Trophy, 
 import { cn } from "@/lib/utils";
 import { CourseCard } from "@/components/CourseCard";
 
+import { dbConnect } from "@/lib/db";
+import { Course } from "@/models/Course";
+
 async function getRecentCourses() {
-  // If we are in the same environment (server-side), we might not be able to fetch localhost easily without absolute URL.
-  // Using absolute URL for now, assuming default nextjs port. 
-  // Ideally use an internal service call if possible, but for Wiring, standard fetch is expected.
   try {
-    const res = await fetch('http://localhost:3001/api/courses', { cache: 'no-store' }); // Disable cache for dev
-    if (!res.ok) return [];
-    return res.json();
+    await dbConnect();
+    const courses = await Course.find({ status: "approved", isAvailable: true })
+      .sort({ createdAt: -1 })
+      .limit(3)
+      .populate("currentOwner", "name photoURL email")
+      .lean();
+
+    return JSON.parse(JSON.stringify(courses)); // Ensure it's plain objects for RSC
   } catch (error) {
     console.error("Failed to fetch courses:", error);
     return [];

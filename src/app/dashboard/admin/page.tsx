@@ -204,6 +204,15 @@ function AdminDashboardContent() {
                         exit={{ opacity: 0, y: -10 }}
                         className="space-y-6"
                     >
+                        <div className="mb-6">
+                            <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-50">
+                                Welcome back, {session?.user?.name?.split(" ")[0]}! 👋
+                            </h2>
+                            <p className="text-slate-500 dark:text-slate-400">
+                                Here's what's happening on the platform today.
+                            </p>
+                        </div>
+
                         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                             {statsList.map((stat, i) => (
                                 <StatCard key={i} {...stat} />
@@ -267,7 +276,7 @@ function AdminDashboardContent() {
                                 <div className="space-y-3">
                                     {coursesLoading ? (
                                         <div className="space-y-3">
-                                            {[1,2,3].map(i => (
+                                            {[1, 2, 3].map(i => (
                                                 <div key={i} className="h-12 bg-slate-100 dark:bg-zinc-800 rounded-lg animate-pulse" />
                                             ))}
                                         </div>
@@ -292,6 +301,18 @@ function AdminDashboardContent() {
                                     </Button>
                                 </div>
                             </Card>
+                        </div>
+
+                        <div className="mt-8">
+                            <CourseList
+                                title="Approved Courses"
+                                courses={courses}
+                                filterStatus="approved"
+                                isLoading={coursesLoading}
+                                isError={coursesError}
+                                onUpdate={updateCourseStatus}
+                                showActions={false}
+                            />
                         </div>
                     </motion.div>
                 )}
@@ -633,9 +654,8 @@ function CourseList({ title, courses, isLoading, isError, onUpdate, showActions,
 }
 
 function StatCard({ label, value, icon: Icon, color, bg, loading, error, onClick }: any) {
-    const Component = onClick ? 'button' : 'div';
     return (
-        <Card className={cn("p-6 border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm relative overflow-hidden group", onClick && "cursor-pointer hover:shadow-md transition-shadow")} onClick={onClick}>
+        <Card spotlight className={cn("p-6 border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm relative overflow-hidden group", onClick && "cursor-pointer hover:shadow-md transition-shadow")} onClick={onClick}>
             <div className="flex items-center justify-between relative z-10">
                 <div>
                     <p className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">{label}</p>

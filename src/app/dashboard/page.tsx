@@ -7,6 +7,8 @@ import { BookOpen, ArrowLeftRight, TrendingUp, Clock, User as UserIcon } from "l
 import { useSession } from "next-auth/react";
 import { useQuery } from "@tanstack/react-query";
 import LoadingSpinner from "@/components/LoadingSpinner";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 async function fetchStats() {
     const res = await fetch("/api/user/stats");
@@ -25,6 +27,15 @@ export default function DashboardOverview() {
 
     // @ts-expect-error role exists
     const isAdmin = session?.user?.role === "admin";
+    const router = useRouter();
+
+    useEffect(() => {
+        if (isAdmin) {
+            router.push("/dashboard/admin");
+        }
+    }, [isAdmin, router]);
+
+    if (isAdmin) return <LoadingSpinner />;
 
     if (authStatus === "loading" || isLoading) return <LoadingSpinner />;
     if (error) return <div className="p-8 text-center text-red-500">Failed to load dashboard data. Please try again later.</div>;
