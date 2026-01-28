@@ -4,7 +4,7 @@ Skill Swap is a premium, AI-powered marketplace designed to facilitate skill tra
 
 Live link: https://skill-swap-zagh-git-main-sumi-akters-projects.vercel.app?_vercel_share=FTa7JZuJG9hTlpQIdUQSle158E7eO4bT
 
-## ✨ Key Features
+##  Key Features
 
 ### 👤 User Features
 - **Premium Dashboard**: A personalized overview of your learning journey, owned courses, and active exchange requests.
@@ -52,6 +52,3 @@ To test the platform's roles immediately, use these credentials on the login pag
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 📄 License
-
-This project is licensed under the MIT License.
