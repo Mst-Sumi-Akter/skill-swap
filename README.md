@@ -52,3 +52,5 @@ To test the platform's roles immediately, use these credentials on the login pag
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
+----
+
