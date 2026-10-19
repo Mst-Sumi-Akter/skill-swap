@@ -24,7 +24,7 @@ Live link: https://skill-swap-zagh-git-main-sumi-akters-projects.vercel.app?_ver
 - **Role-Based Access**: Specialized views and permissions for Users and Admins.
 - **Protected Routes**: Middleware-level security to ensure your data and courses are always safe.
 
----
+----
 
 ## 🛠️ Tech Stack
 
@@ -35,7 +35,7 @@ Live link: https://skill-swap-zagh-git-main-sumi-akters-projects.vercel.app?_ver
 - **Authentication**: [NextAuth.js v5 (Beta)](https://next-auth.js.org/)
 - **Components**: Custom-built premium components with a focus on rich aesthetics.
 
----
+----
 
 ## 📝 Credentials for Demo
 
@@ -46,7 +46,7 @@ To test the platform's roles immediately, use these credentials on the login pag
 - **User 1**: `n@gmail.com` | `qwert`
 - **User 2**: `sumi@gmail.com` | `zxcvb`
 
----
+----
 
 ## 🤝 Contributing
 
